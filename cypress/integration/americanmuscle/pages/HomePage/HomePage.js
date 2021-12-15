@@ -20,7 +20,7 @@ export function HomePageTesting() {
             })
         })
 
-        describe(`Selecting Vehicle Steps`, () => {
+        describe(`Selecting Vehicle Main Banner Steps`, () => {
 
             describe('Step 01', () => {
                 it(`Verify Step01 Title`, () => {

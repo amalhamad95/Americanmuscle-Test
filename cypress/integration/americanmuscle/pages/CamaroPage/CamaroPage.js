@@ -25,7 +25,9 @@ export function CamaroPageTesting() {
             it(`Verify Search Input Placholder`, () => {
                 mTests.checkSearchInput("Search '16-'22 Camaro Parts")
             })
+        })
 
+        describe(`Open "${Rotors} Page"`, () => {
             it(`Verify hovering "${Brakes}" NavItem`, () => {
                 mActions.hoverBrakes()
             })
@@ -37,6 +39,14 @@ export function CamaroPageTesting() {
             it(`Verify loading "${Rotors}" page`, () => {
                 mTests.checkCamaroRotorsPageLoading()
             })
+
+            it(`Verify "${Rotors}" Breadcrumb Selected`, () => {
+                mTests.checkPageBreadcrumbSelectedItem('2016-2022 Camaro Rotors')
+            })
+
+            it(`Verify page breadcrumbs`, () => {
+                mTests.checkPageBreadcrumbs()
+            })
         })
 
         describe(`Select Custom Filters`, () => {
@@ -46,10 +56,14 @@ export function CamaroPageTesting() {
                 mTests.checkRotorDrumsSelected()
             })
 
+            it(`Verify results Pagination visible`, () => {
+                mTests.checkPagePagination()
+            })
+
             it(`Verify Product List Size after Filter`, () => {
-                cy.get('@RotorsCount').then((text) => {
-                    mTests.checkProductsListCount(text)
-                })
+                // cy.get('@RotorsCount').then((text) => {
+                mTests.checkTotalResultsCount(189)
+                // })
             })
 
             it(`Verify filling Min_Price Filter`, () => {
@@ -76,29 +90,7 @@ export function CamaroPageTesting() {
             })
 
             it(`Verify Products Prices between [${minPrice} ,${maxPrice}]`, function () {
-                cy.get('.products_container li p[data-qatgt="price"]').then(priceList => {
-
-                    cy.log(priceList)
-
-                    for (let i = 0; i < priceList.length; i++) {
-                        Cypress.$(priceList[i]).text().substr(1).trim().replace(/,/g, '').get()
-                            .then(function (value) {
-                                const price = parseFloat(value)
-                                cy.wrap(price).should('be.gte', parseFloat(minPrice)); // greater than equal to
-                                cy.wrap(price).should('be.lte', parseFloat(maxPrice)); // less than equal to
-                            })
-                    }
-
-                    // ele.map((index, el) => Cypress.$(el).text().substr(1).trim().replace(/,/g, '')).get()
-                    // .then((value) => {
-                    //     const price = parseFloat(value)
-                    //     cy.wrap(price).should('be.gte', parseFloat(minPrice)); // greater than equal to
-                    //     cy.wrap(price).should('be.lte', parseFloat(maxPrice)); // less than equal to
-                    // })
-                    // // const unsortedItems = ele.map((index, el) => Cypress.$(el).text().substr(1).trim().replace(/,/g, '')).get();
-                    // // const sortedItems = unsortedItems.slice().sort((a, b) => parseFloat(a) - parseFloat(b));
-                    // // expect(sortedItems, 'Items are sorted').to.deep.equal(unsortedItems);
-                });
+                mTests.checkProductsSortedByPrice()
             });
 
             it(`Verify Sorting items based on "Customer rating"`, () => {

@@ -23,6 +23,14 @@ export class CamaroPageItems {
         return cy.get('a[href="/2016-camaro-rotors.html"]')
     }
 
+    getPageBreadcrumbs() {
+        return cy.get('section > div > ul.breadcrumbs li')
+    }
+
+    getGenerationYearsText() {
+        cy.get('generation_years_text')
+    }
+
     //Auto Loaded Modal
     getAutoLoadedModal() {
         return cy.get('div.overlay.marketing_modal')
@@ -39,8 +47,16 @@ export class CamaroPageItems {
         return cy.get(selctor)
     }
 
+    getPagePagination() {
+        return cy.get('div.controls > nav.pagination')
+    }
+
     getProductsList() {
         return cy.get('.products_container ul li')
+    }
+
+    getTotalResultsCount() {
+        return cy.get('span.total_matching')
     }
 
     getProductTotalsSpans() {

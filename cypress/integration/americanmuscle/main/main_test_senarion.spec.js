@@ -20,8 +20,8 @@ describe('Americanmuscle Main Test', () => {
     )
 
     before(() => {
-        // cy.visit('')
-        cy.visit(product.href)
+        cy.visit('')
+        // cy.visit(product.href)
     })
 
     beforeEach(() => {
