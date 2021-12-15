@@ -9,16 +9,16 @@ export function ProductDetailsPageTesting(product) {
         let mActions = new ProductDetailsPageActions()
         let mTests = new ProductDetailsPageTests()
 
-        describe(`Open "${product.name}" Details Page`, () => {
-            it(`Verify clicking on "${product.name}"`, () => {
-                cy.wait(1 * 1000)
-                mActions.clickProduct()
-            })
+        // describe(`Open "${product.name}" Details Page`, () => {
+        //     it(`Verify clicking on "${product.name}"`, () => {
+        //         cy.wait(1 * 1000)
+        //         mActions.clickProduct()
+        //     })
 
-            it(`Verify loading "${ProductDetailsPageTitle}"`, () => {
-                mTests.checkProductDetailsPageLoading(product.href)
-            })
-        })
+        //     it(`Verify loading "${ProductDetailsPageTitle}"`, () => {
+        //         mTests.checkProductDetailsPageLoading(product.href)
+        //     })
+        // })
 
         describe(`Check Product Details`, () => {
             it(`Verify "Product Name" appears correctly`, () => {
