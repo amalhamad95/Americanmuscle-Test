@@ -30,6 +30,7 @@ export const Rotors = "Rotors"
 export const Rotors_filter = "Brake Rotors and Drums"
  
 export const ProductName = "SP Performance Cross-Drilled and Slotted Rotors with Black Zinc Plating"
+export const ProductSKu = "CC5419"
 
 export const minPrice = "120"
 export const maxPrice = "290"
