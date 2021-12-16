@@ -8,7 +8,9 @@ export class SavedProductsPageTests {
     }
 
     checkSavedProductsPageLoading() {
-        cy.checkPageUrl(saved_products_url, 'My Account')
+        cy.url().should('include', saved_products_url)
+        cy.get('.myAccount h1').contains('My Account')
+        // cy.checkPageUrl(saved_products_url, '.myAccount h1', 'My Account')
     }
 
     checkPageBreadcrumbSelectedItem() {

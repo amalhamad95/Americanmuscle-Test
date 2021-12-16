@@ -14,6 +14,10 @@ export function CamaroPageTesting() {
                 mTests.checkCamaroPageLoading()
             })
 
+            it(`Verify Cart Count is ZERO`, () => {
+                cy.checkCartCount('0')
+            })
+
             // it(`Verify closing "Auto loaded"`, () => {
             //     mTests.checkAutoLoadedModalVisible()
             // })
@@ -38,6 +42,10 @@ export function CamaroPageTesting() {
 
             it(`Verify loading "${Rotors}" page`, () => {
                 mTests.checkCamaroRotorsPageLoading()
+            })
+
+            it(`Verify Cart Count is ZERO`, () => {
+                cy.checkCartCount('0')
             })
 
             it(`Verify "${Rotors}" Breadcrumb Selected`, () => {
@@ -85,7 +93,7 @@ export function CamaroPageTesting() {
                 cy.wait('@brakesRequest');
             })
 
-            it(`Verify Chosen Filters showed correctly`, () => {
+            it(`Verify Chosen Filters appears correctly`, () => {
                 mTests.checkChosenFilters()
             })
 

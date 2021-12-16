@@ -50,6 +50,7 @@ export class CartPageItems {
     getMiniCartSpecificProduct() {
         return cy.get('.mini_cart li')
             .contains(ProductName)
-            .closest('li')
+            .parent()
+            // .closest('li')
     }
 }

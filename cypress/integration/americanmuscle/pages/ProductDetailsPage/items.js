@@ -6,7 +6,8 @@ export class ProductDetailsPageItems {
 
     getSpecificProduct() {
         return cy.get('.products_container li a[data-qatgt="productName"]')
-            .contains(ProductSKu)
+        // return cy.get('.products_container li')
+            .contains(ProductName)
     }
 
     getProductTitle() {
