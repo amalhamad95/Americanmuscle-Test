@@ -1,4 +1,4 @@
-# Americanmuscle-Task----Amal-Hamad
+# Americanmuscle-Test
 
 ![Cypress.io](https://miro.medium.com/max/7200/1*Jkb_tsMBOvL6wQ8bzldu8Q.png)
 
@@ -11,7 +11,7 @@ This project is automation testing for Americanmuscle site https://www.americanm
   
 ### How to start using this script
 ```javascript
-git clone https://github.com/amalhamad95/Watani-Mall-Task---Amal-Hamad.git
+git clone https://github.com/amalhamad95/Americanmuscle-Test.git
 
 // Once it finish open it using terminal and do
 npm install
